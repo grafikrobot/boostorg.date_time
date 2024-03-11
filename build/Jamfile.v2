@@ -7,10 +7,10 @@
 #
 
 
-project boost/date_time
+project
     : requirements
         <define>DATE_TIME_INLINE
-	<link>shared:<define>BOOST_ALL_DYN_LINK=1
+        <link>shared:<define>BOOST_ALL_DYN_LINK=1
     : usage-requirements
         <define>DATE_TIME_INLINE
         <link>shared:<define>BOOST_DATE_TIME_DYN_LINK=1
@@ -20,5 +20,3 @@ project boost/date_time
 # greg_month.cpp is now just a stub so that there is
 # still a boost_date_time library to link for backward compatibility
 lib boost_date_time : gregorian/greg_month.cpp ;
-
-boost-install boost_date_time ;

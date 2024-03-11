@@ -1,4 +1,4 @@
-project libs/date_time/example ;
+project ;
 
 exe dates_as_strings   : gregorian/dates_as_strings.cpp ;
 exe days_alive         : gregorian/days_alive.cpp ;

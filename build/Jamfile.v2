@@ -8,6 +8,7 @@
 
 
 project
+    : common-requirements <library>$(boost_dependencies)
     : requirements
         <define>DATE_TIME_INLINE
         <link>shared:<define>BOOST_ALL_DYN_LINK=1

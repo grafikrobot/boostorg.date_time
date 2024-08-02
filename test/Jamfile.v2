@@ -3,10 +3,12 @@ import path ;
 import regex ;
 import testing ;
 
+project : requirements <library>/boost/date_time//boost_date_time ;
+
 local DATE_TIME_DYNAMIC_PROPERTIES = <define>BOOST_ALL_DYN_LINK <runtime-link>shared <define>BOOST_DATE_TIME_POSIX_TIME_STD_CONFIG <define>BOOST_ALL_NO_LIB ;
 local DATE_TIME_PROPERTIES = <define>BOOST_DATE_TIME_POSIX_TIME_STD_CONFIG
-  # FIXME 
-  #std::locale-support 
+  # FIXME
+  #std::locale-support
   <define>BOOST_ALL_NO_LIB ;
 
 # core stuff
@@ -65,7 +67,7 @@ run posix_time/testtime.cpp ;
 run posix_time/testmicrosec_time_clock.cpp ;
 run posix_time/testgreg_duration_operators.cpp ;
 run posix_time/testtime_facet.cpp ;
-run posix_time/testtime_input_facet.cpp 
+run posix_time/testtime_input_facet.cpp
     : : : <define>BOOST_DATE_TIME_POSIX_TIME_STD_CONFIG
     : testtime_input_facet ;
 
@@ -98,7 +100,7 @@ run posix_time/testtime_serialize.cpp
 # versioning tests
 run posix_time/testtime_serialize_versioning.cpp
     /boost/serialization//boost_serialization
-    : : testtime_serialize_versioning_prev 
+    : : testtime_serialize_versioning_prev
     : <define>BOOST_DATE_TIME_POSIX_TIME_STD_CONFIG
     : testtime_serialize_versioning_curr ;
 
@@ -124,7 +126,7 @@ run local_time/testlocal_time.cpp ;
 run local_time/testlocal_time_iterator.cpp ;
 run local_time/testlocal_time_period.cpp ;
 
-run local_time/testtz_database.cpp 
+run local_time/testtz_database.cpp
      : : ../data/date_time_zonespec.csv local_time/poorly_formed_zonespec.csv
      :  ;
 run local_time/testlocal_time_facet.cpp
@@ -137,7 +139,7 @@ run local_time/testclocks.cpp ;
 #{
 #  local DATE_TIME_PROPERTIES = <define>BOOST_ALL_NO_LIB  <define>USE_DATE_TIME_PRE_1_33_FACET_IO
 #    # FIXME
-#    # std::locale-support toolset::require-boost-spirit-support 
+#    # std::locale-support toolset::require-boost-spirit-support
 #    ;
 
 # Iterate over all public headers and generate a self-contained header test to check for any missing includes
@@ -158,8 +160,8 @@ if ! [ os.environ BOOST_DATE_TIME_TEST_WITHOUT_SELF_CONTAINED_HEADER_TESTS ]
 
 # Copyright (c) 2000-2020
 # CrystalClear Software, Inc.
-# Subject to the Boost Software License, Version 1.0. 
-# (See accompanying file LICENSE_1_0.txt or 
+# Subject to the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or
 # http://www.boost.org/LICENSE_1_0.txt)
 
 
